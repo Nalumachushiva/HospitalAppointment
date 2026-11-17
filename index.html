@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Appointment Booking</title>
+</head>
+
+<body>
+
+    <h1>ABC Hospital</h1>
+    <h2>Online Hospital Appointment Booking System</h2>
+
+    <hr>
+
+    <h3>Patient Registration</h3>
+
+    <form>
+        Name:
+        <input type="text" placeholder="Enter Name">
+        <br><br>
+
+        Email:
+        <input type="email" placeholder="Enter Email">
+        <br><br>
+
+        Password:
+        <input type="password" placeholder="Enter Password">
+        <br><br>
+
+        <button type="button">Register</button>
+    </form>
+
+    <hr>
+
+    <h3>Patient Login</h3>
+
+    <form>
+        Email:
+        <input type="email" placeholder="Enter Email">
+        <br><br>
+
+        Password:
+        <input type="password" placeholder="Enter Password">
+        <br><br>
+
+        <button type="button">Login</button>
+    </form>
+
+    <hr>
+
+    <h3>Available Doctors</h3>
+
+    <input type="text" id="search"
+    placeholder="Search Doctor">
+
+    <button onclick="searchDoctor()">Search</button>
+
+    <div id="doctors">
+
+        <p class="doctor">
+            Dr. Rahul - Cardiologist
+            <br>Available: 9 AM - 12 PM
+        </p>
+
+        <p class="doctor">
+            Dr. Priya - Dermatologist
+            <br>Available: 10 AM - 2 PM
+        </p>
+
+        <p class="doctor">
+            Dr. Arjun - Neurologist
+            <br>Available: 2 PM - 5 PM
+        </p>
+
+    </div>
+
+    <hr>
+
+    <h3>Book Appointment</h3>
+
+    <form>
+        Patient Name:
+        <input type="text" placeholder="Patient Name">
+        <br><br>
+
+        Select Doctor:
+        <select>
+            <option>Dr. Rahul</option>
+            <option>Dr. Priya</option>
+            <option>Dr. Arjun</option>
+        </select>
+        <br><br>
+
+        Appointment Date:
+        <input type="date">
+        <br><br>
+
+        Appointment Time:
+        <input type="time">
+        <br><br>
+
+        <button type="button"
+        onclick="alert('Appointment request submitted!')">
+            Book Appointment
+        </button>
+    </form>
+
+    <hr>
+
+    <h3>Cancel Appointment</h3>
+
+    <input type="text" placeholder="Enter Appointment ID">
+
+    <button onclick="alert('Cancellation request submitted!')">
+        Cancel Appointment
+    </button>
+
+    <hr>
+
+    <h3>Admin - Doctor Management</h3>
+
+    <form>
+        Doctor Name:
+        <input type="text" placeholder="Doctor Name">
+        <br><br>
+
+        Specialization:
+        <input type="text" placeholder="Specialization">
+        <br><br>
+
+        Available Timings:
+        <input type="text" placeholder="9 AM - 5 PM">
+        <br><br>
+
+        <button type="button"
+        onclick="alert('Doctor details submitted!')">
+            Add Doctor
+        </button>
+    </form>
+
+    <hr>
+
+    <footer>
+        <p>ABC Hospital</p>
+        <p>All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function searchDoctor() {
+
+            let value = document.getElementById("search")
+                .value.toLowerCase();
+
+            let doctors = document.getElementsByClassName("doctor");
+
+            for (let doctor of doctors) {
+
+                if (doctor.innerText.toLowerCase().includes(value)) {
+                    doctor.style.display = "block";
+                }
+                else {
+                    doctor.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
